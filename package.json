@@ -1,13 +1,16 @@
 {
-  "name": "proyects-Nodejs-Server",
+  "name": "proyects_Nodejs_Server-R08",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js" 
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
