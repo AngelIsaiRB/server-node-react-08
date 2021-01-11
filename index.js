@@ -17,18 +17,16 @@ const app = express();
 app.use(express.static("public"));
 
 // rutas
+app.use("/api/auth",require("./routes/auth"));
+//TODO: CRUD: Events
 
-// app.get("/",(req,res)=>{
-//     console.log("se requiere el /");
-//     res.json({
-//         ok:true
-//     })
-// });
+
+
 
 
 // ecuchar peticiones
 
 app.listen(process.env.PORT, ()=>{
-    console.log(`servidor corriendo en puerto ${4000}`);
+    console.log(`servidor corriendo en puerto ${process.env.PORT}`);
 
 });
