@@ -1,24 +1,31 @@
 const {response} = require('express');
 
 
-const crearUsuario = (req , res = response)=>{   
+const crearUsuario = (req , res = response)=>{ 
+
+    const {name, email, password} = req.body
     res.json({
         ok:true,
-        msg:"register"
+        msg:"register",
+        name,
+        email,
+        password
     })
 }
 
 const login = (req,res=response)=>{
-    console.log("se requiere el /");
+    const {email, password} = req.body;
     res.json({
         ok:true,
-        msg:"login"
+        msg:"login",
+        email,
+        password
     })
 }
 
 
 const renew = (req,res = response)=>{
-    console.log("se requiere el /");
+   
     res.json({
         ok:true,
         msg:"renew"
