@@ -1,6 +1,8 @@
 const {response} = require('express');
+const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const User = require('../models/User');
+
 
 
 const crearUsuario = async (req , res = response)=>{ 
@@ -14,8 +16,12 @@ const crearUsuario = async (req , res = response)=>{
                 msg:"ya existe un usuario con el correo"
             });
         }
-
+        
         usuario = new User(req.body);
+        // encryptar password
+        const salt = bcryptjs.genSaltSync();
+        usuario.password = bcryptjs.hashSync(password, salt); 
+
         await usuario.save();
         return res.status(201).json({
         ok:true,
